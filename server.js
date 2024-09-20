@@ -16,7 +16,7 @@ app.use(cors());
 const { auth }  = require('express-oauth2-jwt-bearer');
 const jwtCheck = auth({
     audience: 'Health api unique Identifier',
-    issuerBaseURL: 'https://dev-gana4pxtp6vnixt2.au.auth0.com/',
+    issuerBaseURL: 'https://dev-t6vu0zserkbj4sda.us.auth0.com',
     tokenSigningAlg: 'RS256'
   });
   
@@ -30,7 +30,7 @@ app.post('/api/report', async (req, res) => {
     
     try {
         const accessToken = req.headers.authorization.split(' ')[1];
-        const response = await axios.get('https://dev-gana4pxtp6vnixt2.au.auth0.com/userinfo',{
+        const response = await axios.get('https://dev-t6vu0zserkbj4sda.us.auth0.com/userinfo',{
           headers: {
             authorization: `Bearer ${accessToken}`
           }
@@ -50,7 +50,7 @@ app.post('/api/report', async (req, res) => {
 app.get("/testing",async (req,res) =>{
     try{
         const accessToken = req.headers.authorization.split(' ')[1];
-        const response = await axios.get('https://dev-gana4pxtp6vnixt2.au.auth0.com/userinfo',{
+        const response = await axios.get('https://dev-t6vu0zserkbj4sda.us.auth0.com/userinfo',{
           headers: {
             authorization: `Bearer ${accessToken}`
           }
@@ -69,7 +69,7 @@ app.get('/api/report', async (req, res) => {
   try {
     
     const accessToken = req.headers.authorization.split(' ')[1];
-    const response = await axios.get('https://dev-gana4pxtp6vnixt2.au.auth0.com/userinfo',{
+    const response = await axios.get('https://dev-t6vu0zserkbj4sda.us.auth0.com/userinfo',{
       headers: {
         authorization: `Bearer ${accessToken}`
       }
