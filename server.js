@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors());
 const { auth }  = require('express-oauth2-jwt-bearer');
 const jwtCheck = auth({
-    audience: 'Health api unique Identifier',
+    audience: 'https://dev-t6vu0zserkbj4sda.us.auth0.com/api/v2/',
     issuerBaseURL: 'https://dev-t6vu0zserkbj4sda.us.auth0.com',
     tokenSigningAlg: 'RS256'
   });
